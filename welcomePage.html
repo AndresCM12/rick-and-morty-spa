@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick and Morty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./icons/icon-512x512.png"
+      type="image/x-icon"
+    />
+    <link rel="apple-touch-icon" href="./icons/icon-512x512.png" />
+    <link rel="stylesheet" href="./app/assets/style.css" />
+  </head>
+  <body class="lightMode">
+    <div id="app"></div>
+    <svg id="menu"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g id="burger">
+        <g id="rec3">
+          <rect class="openup"
+            id="Rectangle 13"
+            width="19.9888"
+            height="2.00001"
+            transform="matrix(0.999993 0.00363147 -0.00566781 0.999984 6.01134 10)"
+          />
+        </g>
+        <g id="rec2">
+          <rect class="openmiddle"
+            id="Rectangle 14"
+            x="6"
+            y="15"
+            width="20"
+            height="2"
+          />
+        </g>
+        <g id="rec1">
+          <rect class="opendown"
+            id="Rectangle 15"
+            width="19.9988"
+            height="2"
+            transform="matrix(1 -0.000428994 0.00060153 1 6 20.0082)"
+          />
+        </g>
+      </g>
+    </svg>
+    <script src="./app/helpers/eventManager.js"></script>
+    <script type="module" src="./app/index.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (element) => {
+        if (localStorage.getItem("darkMode") == null) {
+          document.querySelector("body").classList.remove("darkMode");
+          document.querySelector("body").classList.add("lightMode");
+        } else if (localStorage.getItem("darkMode") == "true") {
+          document.querySelector("body").classList.remove("lightMode");
+          document.querySelector("body").classList.add("darkMode");
+          //console.log(document.querySelector("#app #colorMode"));
+        } else if (localStorage.getItem("darkMode") == "false") {
+          document.querySelector("body").classList.remove("darkMode");
+          document.querySelector("body").classList.add("lightMode");
+        }
+      });
+    </script>
+  </body>
+</html>
